@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: root-app
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: https://github.com/zahlenhelfer/argocd-k8s-test.git
-    path: /root-app
     targetRevision: HEAD
+    directory:
+      recurse: true
+    path: /root-app
   destination:
     server: https://kubernetes.default.svc
     namespace: default
