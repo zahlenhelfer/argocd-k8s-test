@@ -29,5 +29,5 @@ spec:
   selector:
     app: server
   ports:
-    - port: 4711
-      targetPort: 4711
+    - port: 5000
+      targetPort: 5000
